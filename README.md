@@ -7,7 +7,7 @@ Github API service is a user friendly service developed to search for users on G
 High Level Architecture Design:
 
 The Web application is hosted in Amazon AWS. It makes a http call to the GitHub API to retrive the search results.
-(Architecture diagram is shown in the architecture.doc file)
+(Architecture diagram is shown in the architectureDiagram.png file)
  
 
 Application description:
