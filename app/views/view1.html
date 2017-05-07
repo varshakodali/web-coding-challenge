@@ -1,0 +1,56 @@
+
+<div class="well">
+ <div ng-show="loader" class="loader row pull-right">
+ 
+</div> 
+
+<div class="row"> 
+<div class="col-md-6 col-xs-12">
+<label>Search User</label>
+  <input class="form-control" type="text" ng-model="username" placeholder="enter github username" ng-change = "triggerHTTPCall()"/>  
+  
+</div>
+<div class="col-md-3 col-xs-12">
+  <button class = "btn btn-primary" ng-click = "getGitUserInfo()" style="margin-top: 24px;">Search</button>
+</div>
+
+<div ng-show = "loaded" class="col-md-3 col-xs-12">
+   <h2> {{ userDetails.login }} </h2>
+    <div>
+      <a href="{{ userDetails.html_url }}" target="_blank">
+      <img src="{{ userDetails.avatar_url }}" width="90" height="90" alt="{{ userDetails.login }}"></a>
+    </div>
+    <p>Followers: {{ userDetails.followers }} , Following: {{ userDetails.following }}</p>
+</div>
+</div>
+
+
+<div class="row">
+  <div ng-show="notFound" class="col-md-12 col-xs-12">
+    <h4 class="text-danger">No user found!</h4>
+  </div>
+</div>
+
+<div class="row" ng-show="loaded">
+<div class="col-md-6 col-xs-12">
+  
+  <div ng-show="followerTable">
+  <p><strong>Followers List:</strong></p>
+  <table class="table table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Github Avatar</th>
+      <th>Github Handle</th>
+    </tr>
+  </thead>
+  <tbody  ng-repeat = "follower in followersList">
+    <tr>
+      <td><a href="{{ follower.html_url }}" target="_blank"><img src="{{ follower.avatar_url }}" width="40" height="40" alt="{{ follower.login }}"></a> </td>
+      <td><a href="{{ follower.html_url }}" target="_blank">{{ follower.login }}</a></td>
+    </tr>
+  </tbody>
+  </div>
+  <p ng-show = "loadMore"> <strong>more</strong> <a href="" ng-click = "loadData()">...</a></p>
+</div>
+</div>
+</div>
