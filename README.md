@@ -48,7 +48,4 @@ Error logging is done using Angular Log provider service for logging the info an
 Deployment
 The web application hosted inAmazon AWS at port 8000 on an Ubuntu server.
 
-Experience
-I have experience working on Angular 2.0 as I'm currently working on Ionic 2.0 for my course project. But I don't have much experience working on Angualr 1.x. I took this opportunity to get to work on Angular 1.x as I'm always in for learning new technologies.
-
 Live Demo:  http://ec2-35-166-242-55.us-west-2.compute.amazonaws.com:8000
